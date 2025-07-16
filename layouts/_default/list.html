@@ -1,0 +1,39 @@
+{{ partial "head.html" . }}
+
+<div class='rw' id='cw'>
+  <main id='mw'>
+
+    <section class='ksf'>
+
+      <header class='qmsg'>
+        <nav aria-label="Breadcrumb" id="bcmb">
+          <ol>
+            <li id="bcli"><a href="/">home</a></li>
+            <li aria-current="page">{{ .Title }}</li>
+          </ol>
+        </nav>
+		<h1>Oyun</h1>
+      </header>
+
+      <ul class='ipw'>
+        {{ range .Pages }}
+        <li class='ixp'>
+          <a href="{{ .RelPermalink }}">
+            <figure>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAQAAACRI2S5AAAAEElEQVR42mNkIAAYRxWAAQAG9gAKqv6+AwAAAABJRU5ErkJggg==" data-src="{{ .Params.featured_image }}" class="imgi" alt="{{ .Title }}" width="750" height="422" />
+              <figcaption>{{ .Title }}</figcaption>
+            </figure>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+
+    </section>
+
+    <nav aria-label="Sayfalar" class="nmb">
+      {{ template "_internal/pagination.html" . }}
+    </nav>
+  </main>
+</div>
+
+{{ partial "footer.html" . }}

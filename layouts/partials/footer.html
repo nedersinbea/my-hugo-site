@@ -1,0 +1,49 @@
+<footer id='fwpp'>
+  <div class='fbr flx'>
+    <div class='rw'>
+      <span class='fcop'>&#169; 2021 Tüm Hakları Saklıdır.</span>
+      <ul class='flnk'>
+        <li><a href='/'>Anasayfa</a></li>
+        <li><a href='/p/iletisim.html'>İletişim</a></li>
+        <li><a href='/p/gizlilik.html'>Gizlilik</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var element;
+  (element=document.getElementById("mli")).onclick=function(){document.body.classList.toggle("nvac")};
+  (element=document.getElementById("lxr")).onclick=function(){document.body.classList.toggle("nvac")};
+  (element=document.getElementById("obbi")).onclick=function(){document.body.classList.toggle("nvac")};
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var e = [].slice.call(document.querySelectorAll("img[data-src]"));
+    if ("IntersectionObserver" in window) {
+      let n = new IntersectionObserver(function(e, t) {
+        e.forEach(function(e) {
+          if (e.isIntersecting) {
+            let t = e.target;
+            t.src = t.dataset.src;
+            n.unobserve(t);
+          }
+        });
+      });
+      e.forEach(function(e) {
+        n.observe(e);
+      })
+    }
+  });
+</script>
+<script>
+  if (!("IntersectionObserver" in window &&
+    "IntersectionObserverEntry" in window &&
+    "intersectionRatio" in window.IntersectionObserverEntry.prototype &&
+    "isIntersecting" in window.IntersectionObserverEntry.prototype))
+    for (var imgEl = document.getElementsByTagName("img"), i = 0; i < imgEl.length; i++)
+      imgEl[i].getAttribute("data-src") && (imgEl[i].setAttribute("src", imgEl[i].getAttribute("data-src")), imgEl[i].removeAttribute("data-src"));
+</script>
+
+</body>
+</html>

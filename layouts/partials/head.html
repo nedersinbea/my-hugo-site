@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+<meta name="generator" content="cloudflare">
+<meta charset="utf-8">	
+<meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+<meta content='max-image-preview:large' name='robots'/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>{{ if .IsHome }}Ana Sayfa - {{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+
+<link rel="stylesheet" href="{{ "style.css" | relURL }}" type="text/css" />
+
+<link rel="canonical" href="{{ .Permalink }}" />
+<meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+<link rel="image_src" href="{{ with .Params.featured_image }}{{ . }}{{ end }}" />
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:image" content="{{ with .Params.featured_image }}{{ . }}{{ end }}" />
+<meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta name="twitter:url" content="{{ .Permalink }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@site_adi" />
+<meta name="twitter:creator" content="@site_adi" />
+<meta name="twitter:title" content="{{ .Title }}" />
+<meta name="twitter:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+<meta name="twitter:image" content="{{ with .Params.featured_image }}{{ . }}{{ end }}" />
+
+<link rel="icon" type="image/png" href="/images/favicon.png" sizes="72x72" />
+{{ if eq .Kind "page" }}
+  {{ partial "schema-newsarticle.html" . }}
+{{ end }}
+
+{{ partial "schema-breadcrumbs.html" . }}
+
+
+</head>
+<body>
+
+<header id='hw'>
+  <div id='smn'>
+    <div class='sfx rw'>
+      <nav class='mbul'>
+        <ul>
+          {{ range .Site.Menus.main }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </nav>
+      <a class='mft' href='/p/iletisim.html'>İletişim</a>
+      <a class='mft' href='/p/kunye.html'>Künye</a>
+      <a class='mft' href='/p/gizlilik.html'>Gizlilik Politikası</a>
+    </div>
+  </div>
+
+  <div class='hh'>
+    <div class='hme rw'>
+      <button class='mmt' id="mli" title='Menü'></button>
+      <button class='mmx' id="lxr" title='Menüyü Kapat'></button>
+
+      <h1 class='mlg'><a href='/' title='{{ .Site.Title }}'>{{ .Site.Title }}</a></h1>
+
+      <nav>
+        <ul id='mnm'>
+          {{ range first 10 .Site.Menus.main }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+          {{ end }}
+          <li><a href='#' class='mnb' id="obbi" >Diğer</a></li>
+        </ul>
+      </nav>
+      <div id='amr'><a class='arm' href='/p/arama.html' title='Ara'></a></div>
+    </div>
+  </div>
+</header>

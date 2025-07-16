@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teknoloji on Site Başlığı</title>
+    <link>http://localhost:1313/teknoloji/</link>
+    <description>Recent content in Teknoloji on Site Başlığı</description>
+    <generator>Hugo</generator>
+    <language>tr</language>
+    <lastBuildDate>Wed, 16 Jul 2025 05:00:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/teknoloji/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Oppo</title>
+      <link>http://localhost:1313/oppo/</link>
+      <pubDate>Wed, 16 Jul 2025 04:00:00 -0400</pubDate>
+      <guid>http://localhost:1313/oppo/</guid>
+      <description>&lt;img alt=&#34;alt etiketi bambili&#34; src=&#34;http://localhost:1313/images/Oppo.jpg&#34; width=&#34;750&#34;  height=&#34;422&#34; &gt;&#xD;&#xA;&lt;p&gt;Yapılan açıklamaya göre 2021-2022 öğretim yılı güz dönemi başlama ve bitiş tarihleri 27 Eylül 2021-7 Ocak 2022 olarak belirlenen Açık Öğretim, İktisat ve İşletme Fakülteleri&amp;#8217;nden kayıt yaptıran ya da kayıt yenilemesini tamamlayan öğrencilerin; güz dönemi ara sınavlarının 27-28 Kasım 2021 tarihinde, güz dönemi dönem sonu sınavlarının ise 8-9 Ocak 2022 tarihinde yapılacağı bilgisi paylaşıldı. 2021 yılı açık öğretim fakültesi yaz okulu sınavları, yüz yüze bir şekilde yapılmıştı. Gelen bilgilere göre 2021-2022 eğitim yılı AÖF güz dönemi sınavlarının da aynı şekilde, yüz yüze olarak yapılması beklenmekte. Buna ek olarak AÖF öğrencileri, güz dönemi ara sınavlarına AÖF sınav merkezinde girecek. &lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

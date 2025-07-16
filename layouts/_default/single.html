@@ -1,0 +1,38 @@
+{{ partial "head.html" . }}
+
+<div class='rw' id='cw'>
+  <main id='mwr'>
+    <div class='psf'>
+      <article class="mkl">
+
+        <nav aria-label="Breadcrumb" id="bcmb">
+          <ol>
+            <li id="bcli"><a href="/">home</a></li>
+            {{ with .Params.categories }}
+              <li><a href="/{{ index . 0 | urlize }}">{{ index . 0 }}</a></li>
+            {{ end }}
+            <li aria-current="page">{{ .Title }}</li>
+          </ol>
+        </nav>
+
+        <header class="mkh">
+          <h1>{{ .Title }}</h1>
+
+          <div class="pdt">
+            <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">&#8226; Yayınlanma tarihi: {{ .Date.Format "02.01.2006 - 15:04" }}</time>
+            {{ if ne .Date .Lastmod }}
+              <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">&#8226; Son güncellenme tarihi: {{ .Lastmod.Format "02.01.2006 - 15:04" }}</time>
+            {{ end }}
+          </div>
+        </header>
+
+        {{ .Content }}
+
+      </article>
+    </div>
+  </main>
+
+  {{ partial "sidebar.html" . }}
+</div>
+
+{{ partial "footer.html" . }}
