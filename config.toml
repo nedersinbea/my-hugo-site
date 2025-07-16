@@ -2,6 +2,7 @@ baseURL = "http://localhost:1313/"
 languageCode = "tr"
 title = "Site Başlığı"
 # theme = ""  # tema yoksa boş bırakabilirsin
+disableKinds = ["RSS"]
 
 # Menü tanımları (header'daki menüler için)
 [menu]
