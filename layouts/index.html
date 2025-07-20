@@ -6,12 +6,30 @@
     <section class='ksf'>
       <h2><a href='/'>Son Yazılar</a></h2>
       <ul class='ipw'>
-        {{ range first 8 (where .Site.RegularPages "Type" "post") }}
+        {{ range $index, $el := first 8 (where .Site.RegularPages "Type" "post") }}
         <li class='ixp'>
-          <a href="{{ .RelPermalink }}">
+          <a href="{{ $el.RelPermalink }}">
             <figure>
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAQAAACRI2S5AAAAEElEQVR42mNkIAAYRxWAAQAG9gAKqv6+AwAAAABJRU5ErkJggg==" data-src="{{ .Params.featured_image }}" class="imgi" alt="{{ .Params.featured_alt }}" width="750" height="422">
-              <figcaption>{{ .Title }}</figcaption>
+              {{ if eq $index 0 }}
+                <img
+                  src="{{ $el.Params.featured_image }}"
+                  class="imgi"
+                  alt="{{ $el.Params.featured_alt }}"
+                  width="750"
+                  height="422"
+                  fetchpriority="high"
+                >
+              {{ else }}
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAQAAACRI2S5AAAAEElEQVR42mNkIAAYRxWAAQAG9gAKqv6+AwAAAABJRU5ErkJggg=="
+                  data-src="{{ $el.Params.featured_image }}"
+                  class="imgi"
+                  alt="{{ $el.Params.featured_alt }}"
+                  width="750"
+                  height="422"
+                >
+              {{ end }}
+              <figcaption>{{ $el.Title }}</figcaption>
             </figure>
           </a>
         </li>
@@ -19,25 +37,42 @@
       </ul>
     </section>
 
-{{ $kategori := "oyun" }}
-{{ with index site.Taxonomies.categories $kategori }}
-<section class='apy'>
-  <h2><a href='/kategori/{{ $kategori | urlize }}'>{{ $kategori }}</a></h2>
-  <ul class='ipw'>
-    {{ range first 6 .Pages }}
-    <li class='ixp'>
-      <a href="{{ .RelPermalink }}">
-        <figure>
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAQAAACRI2S5AAAAEElEQVR42mNkIAAYRxWAAQAG9gAKqv6+AwAAAABJRU5ErkJggg==" data-src="{{ .Params.featured_image }}" class="imgi" alt="{{ .Title }}" width="750" height="422">
-          <figcaption>{{ .Title }}</figcaption>
-        </figure>
-      </a>
-    </li>
+    {{ $kategori := "oyun" }}
+    {{ with index site.Taxonomies.categories $kategori }}
+    <section class='apy'>
+      <h2><a href='/kategori/{{ $kategori | urlize }}'>{{ $kategori }}</a></h2>
+      <ul class='ipw'>
+        {{ range $i, $el := first 6 .Pages }}
+        <li class='ixp'>
+          <a href="{{ $el.RelPermalink }}">
+            <figure>
+              {{ if eq $i 0 }}
+                <img
+                  src="{{ $el.Params.featured_image }}"
+                  class="imgi"
+                  alt="{{ $el.Params.featured_alt }}"
+                  width="750"
+                  height="422"
+                  fetchpriority="high"
+                >
+              {{ else }}
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAQAAACRI2S5AAAAEElEQVR42mNkIAAYRxWAAQAG9gAKqv6+AwAAAABJRU5ErkJggg=="
+                  data-src="{{ $el.Params.featured_image }}"
+                  class="imgi"
+                  alt="{{ $el.Params.featured_alt }}"
+                  width="750"
+                  height="422"
+                >
+              {{ end }}
+              <figcaption>{{ $el.Title }}</figcaption>
+            </figure>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
     {{ end }}
-  </ul>
-</section>
-{{ end }}
-
 
   </main>
 </div>
