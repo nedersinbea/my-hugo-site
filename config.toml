@@ -4,57 +4,8 @@ title = "Site Başlığı"
 # theme = ""  # tema yoksa boş bırakabilirsin
 disableKinds = ["RSS"]
 
-# Menü tanımları (header'daki menüler için)
-[menu]
 
-  [[menu.main]]
-    identifier = "gundem"
-    name = "Gündem"
-    url = "/gundem/"
-    weight = 1
-
-  [[menu.main]]
-    identifier = "teknoloji"
-    name = "Teknoloji"
-    url = "/teknoloji/"
-    weight = 2
-
-  [[menu.main]]
-    identifier = "mobil"
-    name = "Mobil"
-    url = "/mobil/"
-    weight = 3
-
-  [[menu.main]]
-    identifier = "saglikli-yasam"
-    name = "Sağlıklı Yaşam"
-    url = "/saglikli-yasam/"
-    weight = 4
-
-  [[menu.main]]
-    identifier = "oyun"
-    name = "Oyun"
-    url = "/oyun/"
-    weight = 5
-
-  [[menu.main]]
-    identifier = "video"
-    name = "Video"
-    url = "/video/"
-    weight = 6
-
-  [[menu.main]]
-    identifier = "en10"
-    name = "En10"
-    url = "/en10/"
-    weight = 7
-
-  [[menu.main]]
-    identifier = "kesfet"
-    name = "Keşfet"
-    url = "/kesfet/"
-    weight = 8
-
+	
 # Site genel açıklaması (SEO için)
 [params]
   description = "Site açıklaması buraya yazılacak."
@@ -74,5 +25,19 @@ disableKinds = ["RSS"]
       unsafe = true
     [markup.goldmark.parser]
       wrapInParagraph = false
+
+
+[outputs]
+  page = ["HTML"]
+  section = ["HTML"]
+  home = ["HTML", "search"]
+
+
+[outputFormats.search]
+  mediaType = "application/json"
+  baseName = "search"
+  isPlainText = true
+  notAlternative = true
+
 
 

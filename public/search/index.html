@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8" />
+  <title>Site İçi Arama</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: auto; padding: 1rem; }
+    input { width: 100%; padding: 8px; font-size: 1rem; }
+    ul { list-style: none; padding: 0; }
+    li { margin: 1rem 0; }
+    a { font-weight: bold; color: #0056b3; text-decoration: none; }
+    small { display: block; color: #444; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Arama</h1>
+  <input type="text" id="searchInput" placeholder="Bir şeyler yazın..." maxlength="50" />
+  <ul id="results"></ul>
+
+<script>
+  let fuse;
+  let searchData = [];
+
+  const input = document.getElementById('searchInput');
+  const results = document.getElementById('results');
+  let timer;
+
+  
+  function performSearch(query) {
+    if (!fuse) return;
+
+    const result = fuse.search(query);
+
+    if (result.length === 0) {
+      results.innerHTML = '<li>Aradığınız bulunamadı.</li>';
+    } else {
+      results.innerHTML = result.map(({ item }) => `
+        <li>
+          <a href="${item.url}">${item.title}</a>
+          <small>${item.summary}</small>
+        </li>
+      `).join('');
+    }
+  }
+
+  
+  fetch('/search.json')
+    .then(res => res.json())
+    .then(data => {
+      searchData = data;
+      fuse = new Fuse(searchData, {
+        keys: ['title', 'summary'],
+        threshold: 0.3
+      });
+
+      
+      const params = new URLSearchParams(window.location.search);
+      const initialQuery = params.get('q');
+
+      if (initialQuery) {
+        input.value = initialQuery;  
+        performSearch(initialQuery); 
+      }
+    });
+
+  
+  input.addEventListener('input', () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      const query = input.value.trim();
+      if (!query || !fuse) {
+        results.innerHTML = '';
+        return;
+      }
+      performSearch(query);
+    }, 300); 
+  });
+</script>
+
+
+</body>
+</html>

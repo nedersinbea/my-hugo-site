@@ -1,7 +1,7 @@
 {{ partial "head.html" . }}
 
-<div class='rw' id='cw'>
-  <main id='mw'>
+<div class="rw cw">
+  <main class="mw">
 
     <section class='ksf'>
       <h2><a href='/'>Son Yazılar</a></h2>
@@ -10,7 +10,7 @@
         <li class='ixp'>
           <a href="{{ .RelPermalink }}">
             <figure>
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAQAAACRI2S5AAAAEElEQVR42mNkIAAYRxWAAQAG9gAKqv6+AwAAAABJRU5ErkJggg==" data-src="{{ .Params.featured_image }}" class="imgi" alt="{{ .Title }}" width="750" height="422" />
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAQAAACRI2S5AAAAEElEQVR42mNkIAAYRxWAAQAG9gAKqv6+AwAAAABJRU5ErkJggg==" data-src="{{ .Params.featured_image }}" class="imgi" alt="{{ .Title }}" width="750" height="422">
               <figcaption>{{ .Title }}</figcaption>
             </figure>
           </a>
@@ -19,23 +19,25 @@
       </ul>
     </section>
 
-    {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-    <section class='apy'>
-      <h2><a href='/kategori/{{ $name | urlize }}'>{{ $name }}</a></h2>
-      <ul class='ipw'>
-        {{ range first 6 $taxonomy.Pages }}
-        <li class='ixp'>
-          <a href="{{ .RelPermalink }}">
-            <figure>
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAQAAACRI2S5AAAAEElEQVR42mNkIAAYRxWAAQAG9gAKqv6+AwAAAABJRU5ErkJggg==" data-src="{{ .Params.featured_image }}" class="imgi" alt="{{ .Title }}" width="750" height="422" />
-              <figcaption>{{ .Title }}</figcaption>
-            </figure>
-          </a>
-        </li>
-        {{ end }}
-      </ul>
-    </section>
+{{ $kategori := "oyun" }}
+{{ with index site.Taxonomies.categories $kategori }}
+<section class='apy'>
+  <h2><a href='/kategori/{{ $kategori | urlize }}'>{{ $kategori }}</a></h2>
+  <ul class='ipw'>
+    {{ range first 6 .Pages }}
+    <li class='ixp'>
+      <a href="{{ .RelPermalink }}">
+        <figure>
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAQAAACRI2S5AAAAEElEQVR42mNkIAAYRxWAAQAG9gAKqv6+AwAAAABJRU5ErkJggg==" data-src="{{ .Params.featured_image }}" class="imgi" alt="{{ .Title }}" width="750" height="422">
+          <figcaption>{{ .Title }}</figcaption>
+        </figure>
+      </a>
+    </li>
     {{ end }}
+  </ul>
+</section>
+{{ end }}
+
 
   </main>
 </div>

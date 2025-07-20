@@ -1,5 +1,5 @@
 ---
-title: "Gün Batımı"
+title: "Gun Batimi"
 date: 2025-07-16T04:00:00-04:00
 lastmod: 2025-07-16T05:00:00-04:00
 categories: ["oyun"]

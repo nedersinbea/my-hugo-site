@@ -1,0 +1,11 @@
+[
+{{- $pages := where .Site.RegularPages "Type" "in" (slice "post" "page") -}}
+{{- $last := sub (len $pages) 1 -}}
+{{- range $index, $page := $pages -}}
+  {
+    "title": {{ $page.Title | jsonify }},
+    "url": {{ $page.RelPermalink | jsonify }},
+    "summary": {{ $page.Summary | plainify | truncate 100 | jsonify }}
+  }{{ if ne $index $last }},{{ end }}
+{{- end -}}
+]
