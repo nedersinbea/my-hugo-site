@@ -6,9 +6,10 @@ categories: ["oyun"]
 
 description: "Counter Strike 2 açıklaması"
 featured_image: "/images/cs2.jpg"
+featured_alt: "Cs2 ana kapak resmi"
 ---
 
-<img alt="alt etiketi bambili" src="/images/cs2.jpg" width="750"  height="422" >
+<img alt="Cs2 ana kapak resmi" src="/images/cs2.jpg" width="750"  height="422" >
  <h2>COUNTER-STRİKE'TA YENİ BİR DÖNEM BAŞLIYOR!</h2>
 
 Counter-Strike 2, Counter-Strike tarihindeki en büyük teknik sıçramayı içeriyor. Bu sayede gelecek yıllarda çıkacak yeni özellik ve güncellemeler için bir zemin sağlanmış oluyor.

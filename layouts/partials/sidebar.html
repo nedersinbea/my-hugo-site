@@ -6,7 +6,7 @@
       <li>
         <a href="{{ .RelPermalink }}">
           <figure>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAQAAACRI2S5AAAAEElEQVR42mNkIAAYRxWAAQAG9gAKqv6+AwAAAABJRU5ErkJggg==" data-src="{{ with .Params.featured_image }}{{ . }}{{ end }}" class="imgi" alt="{{ .Title }}" width="750" height="422">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAQAAACRI2S5AAAAEElEQVR42mNkIAAYRxWAAQAG9gAKqv6+AwAAAABJRU5ErkJggg==" data-src="{{ with .Params.featured_image }}{{ . }}{{ end }}" class="imgi" alt="{{ .Params.featured_alt }}" width="750" height="422">
             <figcaption>{{ .Title }}</figcaption>
           </figure>
         </a>

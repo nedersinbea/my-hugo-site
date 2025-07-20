@@ -6,9 +6,10 @@ categories: ["oyun"]
 
 description: "teknoloji Bu yazının kısa açıklaması"
 featured_image: "/images/istanbulda-kar.jpg"
+featured_alt: "İstanbulda tramvay ve kar yağışı"
 ---
 
-<img alt="alt etiketi bambili" src="/images/istanbulda-kar.jpg" width="750"  height="422" >
+<img alt="İstanbulda tramvay ve kar yağışı" src="/images/istanbulda-kar.jpg" width="750"  height="422" >
 Şefkatli, evinin bahçesinden kareleri takipçilerinin beğenisine sundu. İstanbul'da beklenen kar yağışı ünlü isimleri de sevindirdi. Birçok ünlü, kar yağışı sonrası sosyal medya hesabından paylaşım yaptı.
 
 Ünlü oyuncu Cansu Dere, kedisiyle birlikte evinin bahçesinde kar keyfi yaptığı anları takipçileriyle paylaştı.
